@@ -9,3 +9,5 @@ services:
       - "5002:5002"
     volumes:
       - "${PWD}/conf:/home/node/charmonator/conf"
+    environment:
+      - "CHARMONATOR_CONFIG=${CHARMONATOR_CONFIG}"
