@@ -1,0 +1,11 @@
+services:
+  charmonator:
+    image: "charmonator"
+    restart: "unless-stopped"
+    build:
+      context: "."
+    user: "${UID:-1000}:${GID:-1000}"  # Run as your host user
+    ports:
+      - "5002:5002"
+    volumes:
+      - "${PWD}/conf:/home/node/charmonator/conf"
